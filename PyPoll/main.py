@@ -12,7 +12,8 @@ ranking = 0
 
 #filepath
 #if you're reading this, I was having trouble with my file path and had to put the full one...
-csvpath = os.path.join(r'C:\Users\kfbie\OneDrive\Desktop\python-challenge\PyPoll\Resources\election_data.csv')
+#csvpath = os.path.join(r'C:\Users\kfbie\OneDrive\Desktop\python-challenge\PyPoll\Resources\election_data.csv')
+csvpath = os.path.join('Resources','election_data.csv')
 
 #open and read file
 with open(csvpath, 'r') as csvfile:
@@ -27,19 +28,15 @@ with open(csvpath, 'r') as csvfile:
     candidateamount = Counter (voterssort)
     candidatevotetotal.append(candidateamount.most_common())
     print(candidatevotetotal)
-    
-    test = 0
-    for  value in candidateamount:
-        test = test+1
-    print(test)
 
     #calc winner and runners up
-    for row in candidatevotetotal:
-        print(row[0][1])
-        gold = (row[0][1])*100/(sum(candidateamount))     
-        print(gold)
-        silver = (row[1][1])*100/(sum(candidateamount))
-        bronze = (row[2][1])*100/(sum(candidateamount))
+    totalrank = candidatevotetotal[0][0][1] + candidatevotetotal[0][1][1] +candidatevotetotal[0][2][1]
+    gold = (candidatevotetotal[0][0][1])*100/(totalrank)     
+    
+    silver = (candidatevotetotal[0][1][1])*100/totalrank
+    
+    bronze = (candidatevotetotal[0][2][1])*100/totalrank
+
     
     # total = 0
     # for value in candidateamount:
