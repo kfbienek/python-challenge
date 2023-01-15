@@ -21,8 +21,6 @@ losschanges = []
 
 
 #filepath
-#if you're reading this, I was having trouble with my file path and had to put the full one...
-#csvpath = os.path.join(r'C:\Users\kfbie\OneDrive\Desktop\python-challenge\PyBank\Resources\budget_data.csv')
 csvpath = os.path.join('Resources','budget_data.csv')
 
 #open and read file
